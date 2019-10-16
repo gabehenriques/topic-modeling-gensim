@@ -44,3 +44,9 @@ dictionary = corpora.Dictionary(tokenized_data)
 
 """Convert document into the bag-of-words (BoW);"""
 corpus = [dictionary.doc2bow(text) for text in tokenized_data]
+
+"""
+Implement Latent Dirichlet Allocation (LDA);
+Classify text in a document to a particular topic;
+"""
+lda_model = models.LdaModel(corpus=corpus, num_topics=NUM_TOPICS, id2word=dictionary)
